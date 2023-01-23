@@ -1,0 +1,29 @@
+.header-container {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #020203;
+}
+
+.menu-nav {
+  display: flex;
+  list-style-type: none;
+}
+
+.logo-header {
+  width: 4rem;
+  border-radius: 100%;
+  background-color: #ff0101;
+}
+
+.link-nav {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.link-nav:hover {
+  color: #ff0101;
+}
