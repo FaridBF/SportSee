@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import Page404 from './pages/Page404/Page404';
+import Page404 from './pages/Page404/Page404';
+import Home from './pages/Home/Home';
 
 // import { library } from '@fortawesome/fontawesome-svg-core';
 // import { faCopyright } from '@fortawesome/free-regular-svg-icons';
@@ -22,8 +23,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='*' element={<Page404 />} />
-        <Route path='/error' element={<Page404 />} /> */}
+          <Route path='*' element={<Page404 />} />
+          <Route path='/error' element={<Page404 />} />
         </Routes>
       </BrowserRouter>
     </>
