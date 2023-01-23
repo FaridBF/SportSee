@@ -29,7 +29,6 @@ npm start ( "start": "react-scripts start")
 ## Les outils utilisés:
 
 - [Figma](https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1) pour la maquette initiale fournie.
-- [Fontawesome](https://fontawesome.com/) est une bibliothèque d'icônes.
 - [React.js](https://fr.reactjs.org/) est une bibliothèque JavaScript pour créer des interfaces utilisateurs.
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom) est un package permettant de réaliser des liaisons pour l'utilisation de React Router dans les applications Web.
 - [Les Hooks](https://fr.reactjs.org/docs/hooks-state.html) permettent de bénéficier d’un état local et d’autres fonctionnalités de React sans avoir à écrire de classes (disponible depuis React 16.8).
