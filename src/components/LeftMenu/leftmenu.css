@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 45rem;
-  width: 7rem;
+  width: 8rem;
   background-color: #020203;
   align-items: center;
   justify-content: center;
@@ -10,4 +10,10 @@
 
 .text-section {
   color: white;
+}
+
+.icon-leftmenu {
+  background: #ffffff;
+  width: 4rem;
+  padding: 1rem;
 }

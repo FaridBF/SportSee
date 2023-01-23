@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
-import logoSportSee from '../../assets/logo/logoSportSee.png';
+import logoSportSee from '../../assets/logoHeader/logoSportSee.png';
 
 import './header.css';
 
@@ -18,7 +18,7 @@ function Header() {
       <nav className='menu-nav-container'>
         <ul className='menu-nav'>
           <li className='left-link-nav'>
-            <NavLink className='link-nav' to='/'>
+            <NavLink className='link-nav firstLinkNav' to='/'>
               SportSee
             </NavLink>
           </li>

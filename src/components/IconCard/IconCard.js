@@ -1,11 +1,9 @@
-import logoSportSee from '../../assets/logo/logoSportSee.png';
-
 import './iconcard.css';
 
-function IconCard() {
+function IconCard({ image }) {
   return (
     <div>
-      <img className='icon-leftmenu' src={logoSportSee} alt='logo SportSee' />
+      <img className='icon-leftmenu' src={image} alt='logo SportSee' />
     </div>
   );
 }
