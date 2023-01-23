@@ -1,10 +1,15 @@
+import IconCard from '../IconCard/IconCard';
 import './leftmenu.css';
 
-function LeftMenu(props) {
+function LeftMenu() {
   return (
-    <div>
-      <p>leftmenu</p>
-    </div>
+    <section className='leftmenu-section'>
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <IconCard />
+      <p className='text-section'>Copyright SportSee 2023</p>
+    </section>
   );
 }
 

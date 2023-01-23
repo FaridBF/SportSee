@@ -1,0 +1,13 @@
+.leftmenu-section {
+  display: flex;
+  flex-direction: column;
+  height: 45rem;
+  width: 7rem;
+  background-color: #020203;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-section {
+  color: white;
+}
