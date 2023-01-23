@@ -5,7 +5,7 @@
 1. Pour cloner le repo du projet Front-end et pouvoir ajouter votre code, veuillez saisir la commande suivante :
 
 ```
-git clone
+git clone https://github.com/FaridBF/SportSee.git
 ```
 
 2. Déplacez vous dans le dossier du repo avec la commande suivante :
