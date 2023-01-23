@@ -10,7 +10,7 @@ function Page404() {
       <div className='container-error404'>
         <h1 className='title-error404'>404</h1>
         <h2 className='description-error404'>
-          Oups! La page que vous demandez n'existe pas. Elle est en cours de
+          La page que vous demandez n'existe pas. Elle est en cours de
           réalisation
         </h2>
         <a className='link-home' href='/'>
