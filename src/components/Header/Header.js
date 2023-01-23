@@ -15,9 +15,9 @@ function Header() {
       <Link to='/'>
         <img className='logo-header' src={logoSportSee} alt='logo SportSee' />
       </Link>
-      <nav>
+      <nav className='menu-nav-container'>
         <ul className='menu-nav'>
-          <li>
+          <li className='left-link-nav'>
             <NavLink className='link-nav' to='/'>
               SportSee
             </NavLink>
