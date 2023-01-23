@@ -20,6 +20,4 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: white;
   color: #2e3333;
-  display: flex;
-  justify-content: center;
 }
