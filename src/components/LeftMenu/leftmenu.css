@@ -16,9 +16,10 @@
   align-items: center;
 }
 
-.icon-leftmenu {
+.icon {
   background: #ffffff;
   width: 4rem;
-  padding: 1rem;
+  padding: 1.2rem;
   cursor: pointer;
+  border-radius: 15%;
 }

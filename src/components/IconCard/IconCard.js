@@ -1,9 +1,9 @@
 import './iconcard.css';
 
-function IconCard({ image }) {
+function IconCard({ image, icon }) {
   return (
-    <div>
-      <img className='icon-leftmenu' src={image} alt='logo SportSee' />
+    <div className='icon-container'>
+      <img className={icon} src={image} alt='logo' />
     </div>
   );
 }
