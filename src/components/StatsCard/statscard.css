@@ -1,0 +1,7 @@
+.statscard {
+  background-color: rgb(236, 192, 255);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  width: 258px;
+  height: 124px;
+}
