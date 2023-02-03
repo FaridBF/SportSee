@@ -10,10 +10,12 @@ import './leftmenu.css';
 function LeftMenu() {
   return (
     <section className='leftmenu-section'>
-      <IconCard image={iconZen} icon={'icon'} />
-      <IconCard image={iconSwimming} icon={'icon'} />
-      <IconCard image={iconBike} icon={'icon'} />
-      <IconCard image={iconMusculation} icon={'icon'} />
+      <div className='icons-leftmenu-container'>
+        <IconCard image={iconZen} icon={'icon'} />
+        <IconCard image={iconSwimming} icon={'icon'} />
+        <IconCard image={iconBike} icon={'icon'} />
+        <IconCard image={iconMusculation} icon={'icon'} />
+      </div>
       <p className='text-section'>Copyright SportSee 2023</p>
     </section>
   );

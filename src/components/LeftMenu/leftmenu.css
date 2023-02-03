@@ -1,11 +1,11 @@
 .leftmenu-section {
   display: flex;
   flex-direction: column;
-  height: 800px;
+  height: 820px;
   width: 8rem;
   background-color: #020203;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .text-section {
@@ -14,6 +14,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 175px;
+  transform: rotate(-90deg);
+}
+
+.icons-leftmenu-container {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .icon {
