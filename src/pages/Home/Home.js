@@ -3,6 +3,10 @@ import DailyActivity from '../../components/DailyActivity/DailyActivity';
 import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import StatsCard from '../../components/StatsCard/StatsCard';
+import SimpleRadarChart from '../../components/SimpleRadarChart/SimpleRadarChart';
+import CustomActiveShapePieChart from '../../components/CustomActiveShapePieChart/CustomActiveShapePieChart';
+import SimpleBarChart from '../../components/SimpleBarChart/SimpleBarChart';
+import SimpleLineChart from '../../components/SimpleLineChart/SimpleLineChart';
 
 import iconApple from '../../assets/statsCard/apple.png';
 import iconCheeseburger from '../../assets/statsCard/cheeseburger.png';
@@ -28,11 +32,11 @@ function Home(props) {
           </p>{' '}
           <div className='section-container'>
             <div className='content-container-left'>
-              <DailyActivity />
+              <DailyActivity chart={<SimpleBarChart />} />
               <div className='container-caloriemeasurementcard'>
-                <CalorieMeasurementCard />
-                <CalorieMeasurementCard />
-                <CalorieMeasurementCard />
+                <CalorieMeasurementCard chart={<SimpleLineChart />} />
+                <CalorieMeasurementCard chart={<SimpleRadarChart />} />
+                <CalorieMeasurementCard chart={<CustomActiveShapePieChart />} />
               </div>
             </div>
             <div className='content-container-right'>

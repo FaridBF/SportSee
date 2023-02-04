@@ -1,9 +1,8 @@
 import React from 'react';
-
 import './caloriemeasurementcard.css';
 
-function CalorieMeasurementCard(props) {
-  return <div className='calorie-measurement-card'>CalorieMeasurementCard</div>;
+function CalorieMeasurementCard({ chart }) {
+  return <div className='calorie-measurement-card'>{chart}</div>;
 }
 
 export default CalorieMeasurementCard;

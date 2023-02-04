@@ -8,7 +8,7 @@ function StatsCard({ image, icon }) {
     <div className='statscard'>
       <IconCard image={image} icon={icon} />
       <div>
-        <p classsName='result-statscard'>290g</p>
+        <p className='result-statscard'>290g</p>
         <p className='calorie-statscard'>Calories</p>
       </div>
     </div>
