@@ -4,7 +4,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   ResponsiveContainer
 } from 'recharts';
 
@@ -48,21 +47,31 @@ const data = [
 ];
 
 export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-radar-chart-rjoc6';
-
   render() {
     return (
-      <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart cx='50%' cy='50%' outerRadius='80%' data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey='subject' />
-          <PolarRadiusAxis />
+      <ResponsiveContainer
+        width='100%'
+        height='100%'
+        stroke='#8884d8'
+        fill='#8884d8'
+      >
+        <RadarChart
+          cx='50%'
+          cy='50%'
+          outerRadius='75%'
+          width={730}
+          height={250}
+          data={data}
+          fill='#8884d8'
+        >
+          <PolarGrid fillOpacity={0.7} strokeWidth={2} radialLines={false} />
+          <PolarAngleAxis dataKey='subject' stroke='white' tickLine={false} />
           <Radar
             name='Mike'
             dataKey='A'
-            stroke='#8884d8'
-            fill='#8884d8'
-            fillOpacity={0.6}
+            stroke='#E60000'
+            fill='#E60000'
+            fillOpacity={0.7}
           />
         </RadarChart>
       </ResponsiveContainer>

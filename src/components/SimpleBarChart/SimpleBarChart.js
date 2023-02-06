@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import {
   BarChart,
   Bar,
-  Cell,
+  LabelList,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,7 +14,7 @@ import {
 const data = [
   {
     name: '1',
-    uv: 4000,
+    calories_brulees: 3000,
     poids: 2400,
     amt: 70
   },
@@ -75,31 +75,41 @@ const data = [
 ];
 
 export default class SimpleBarChart extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-bar-chart-tpz8r';
-
   render() {
     return (
-      <ResponsiveContainer width='100%' height='100%'>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5
-          }}
+      <>
+        <p className='text-activity'>Activité quotidienne</p>
+        <ResponsiveContainer
+          width='100%'
+          height='100%'
+          background-color='#E60000'
         >
-          <CartesianGrid strokeDasharray='3 3' />
-          <XAxis dataKey='name' />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey='poids' fill='#8884d8' />
-          <Bar dataKey='calories_brulees' fill='#82ca9d' />
-        </BarChart>
-      </ResponsiveContainer>
+          <BarChart
+            width={10}
+            height={300}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5
+            }}
+            barCategoryGap={25}
+            barGap={8} // espace entre les deux barres
+          >
+            <CartesianGrid strokeDasharray='4 1 2' vertical={false} />
+            <XAxis dataKey='name' tickLine={false} />
+            <Tooltip />
+            <Legend
+              verticalAlign='top'
+              height={36}
+              dataKey='calories_brulees'
+            />
+            <Bar dataKey='poids' fill='#282D30' />
+            <Bar dataKey='calories_brulees' fill='#E60000' />
+          </BarChart>
+        </ResponsiveContainer>
+      </>
     );
   }
 }

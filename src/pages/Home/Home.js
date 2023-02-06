@@ -4,9 +4,9 @@ import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import StatsCard from '../../components/StatsCard/StatsCard';
 import SimpleRadarChart from '../../components/SimpleRadarChart/SimpleRadarChart';
-import CustomActiveShapePieChart from '../../components/CustomActiveShapePieChart/CustomActiveShapePieChart';
+import PieChartWithPaddingAngle from '../../components/PieChartWithPaddingAngle/PieChartWithPaddingAngle';
 import SimpleBarChart from '../../components/SimpleBarChart/SimpleBarChart';
-import SimpleLineChart from '../../components/SimpleLineChart/SimpleLineChart';
+import TinyLineChart from '../../components/TinyLineChart/TinyLineChart';
 
 import iconApple from '../../assets/statsCard/apple.png';
 import iconCheeseburger from '../../assets/statsCard/cheeseburger.png';
@@ -34,9 +34,9 @@ function Home(props) {
             <div className='content-container-left'>
               <DailyActivity chart={<SimpleBarChart />} />
               <div className='container-caloriemeasurementcard'>
-                <CalorieMeasurementCard chart={<SimpleLineChart />} />
+                <CalorieMeasurementCard chart={<TinyLineChart />} />
                 <CalorieMeasurementCard chart={<SimpleRadarChart />} />
-                <CalorieMeasurementCard chart={<CustomActiveShapePieChart />} />
+                <CalorieMeasurementCard chart={<PieChartWithPaddingAngle />} />
               </div>
             </div>
             <div className='content-container-right'>
