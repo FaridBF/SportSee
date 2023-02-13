@@ -8,19 +8,13 @@
 git clone https://github.com/FaridBF/SportSee.git
 ```
 
-2. Déplacez vous dans le dossier du repo avec la commande suivante :
-
-```
-cd kasa
-```
-
-3. Installez toutes les dépendances avec la commande suivante :
+2. Installez toutes les dépendances avec la commande suivante :
 
 ```
 npm install
 ```
 
-4. Lancer le projet avec la commande suivante :
+3. Lancer le projet avec la commande suivante :
 
 ```
 npm start ( "start": "react-scripts start")
