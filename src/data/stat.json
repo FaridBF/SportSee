@@ -1,26 +1,17 @@
-[
-  {
-    "Calories": 243,
-    "Proteines": 144,
-    "Glucides": 243,
-    "Lipides": 45
-  },
-  {
-    "Calories": 244,
-    "Proteines": 103,
-    "Glucides": 456,
-    "Lipides": 243
-  },
-  {
-    "Calories": 1,
-    "Proteines": 2,
-    "Glucides": 3,
-    "Lipides": 2443
-  },
-  {
-    "Calories": 5,
-    "Proteines": 6,
-    "Glucides": 7,
-    "Lipides": 8
+{
+  "data": {
+    "id": 18,
+    "userInfos": {
+      "firstName": "Cecilia",
+      "lastName": "Ratorez",
+      "age": 34
+    },
+    "score": 0.3,
+    "keyData": {
+      "calorieCount": 2500,
+      "proteinCount": 90,
+      "carbohydrateCount": 150,
+      "lipidCount": 120
+    }
   }
-]
+}

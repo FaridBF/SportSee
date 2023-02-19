@@ -17,12 +17,22 @@ import emoji from '../../assets/emoji/emoji.png';
 import data from '../../data/stat.json';
 
 import '../Home/home.css';
+import { useEffect } from 'react';
 
 function Home(props) {
+  function converToKCal(calorie) {
+    const kiloCal = calorie / 1000;
+    return kiloCal.toFixed(3);
+  }
+
+  useEffect(() => {
+    console.log('data', data.data);
+  });
+
   return (
     <section>
       <Header />
-      <section className='container'>
+      <div className='container'>
         <LeftMenu />
         <div className='daily-container'>
           <h1 className='title-container-home'>
@@ -43,30 +53,32 @@ function Home(props) {
             </div>
 
             <div className='content-container-right'>
-              {data.map((item, index) => (
-                <div key={index}>
-                  <StatsCard
-                    data={item.Calories}
-                    image={iconEnergy}
-                    icon={'icon-energy'}
-                  />
-                  <StatsCard
-                    data={item.Proteines}
-                    image={iconChicken}
-                    icon={'icon-chicken'}
-                  />
-                  <StatsCard
-                    data={item.Glucides}
-                    image={iconApple}
-                    icon={'icon-apple'}
-                  />
-                  <StatsCard
-                    data={item.Lipides}
-                    image={iconCheeseburger}
-                    icon={'icon-cheesburger'}
-                  />
-                </div>
-              ))}
+              <div key={data.id}>
+                <StatsCard
+                  data={converToKCal(data.data.keyData.calorieCount) + 'kCal'}
+                  image={iconEnergy}
+                  icon={'icon-energy'}
+                  name='Calories'
+                />
+                <StatsCard
+                  data={data.data.keyData.proteinCount + 'g'}
+                  image={iconChicken}
+                  icon={'icon-chicken'}
+                  name='Proteines'
+                />
+                <StatsCard
+                  data={data.data.keyData.carbohydrateCount + 'g'}
+                  image={iconApple}
+                  icon={'icon-apple'}
+                  name='Glucides'
+                />
+                <StatsCard
+                  data={data.data.keyData.lipidCount + 'g'}
+                  image={iconCheeseburger}
+                  icon={'icon-cheesburger'}
+                  name='Lipides'
+                />
+              </div>
 
               {/* <StatsCard image={iconEnergy} icon={'icon-energy'} />
               <StatsCard image={iconChicken} icon={'icon-chicken'} />
@@ -75,7 +87,7 @@ function Home(props) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
   );
 }
