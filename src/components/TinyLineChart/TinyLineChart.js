@@ -4,31 +4,31 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 const data = [
   {
     name: 'L',
-    pv: 2400
+    pv: 5
   },
   {
     name: 'M',
-    pv: 1398
+    pv: 10
   },
   {
     name: 'M',
-    pv: 9800
+    pv: 8
   },
   {
     name: 'J',
-    pv: 3908
+    pv: 12
   },
   {
     name: 'V',
-    pv: 4800
+    pv: 20
   },
   {
     name: 'S',
-    pv: 3800
+    pv: 22
   },
   {
     name: 'D',
-    pv: 4300
+    pv: 43
   }
 ];
 
@@ -44,13 +44,38 @@ export default class TinyLineChart extends PureComponent {
             data={data}
             margin={{ top: 5, right: 15, left: 15, bottom: 5 }}
           >
-            <Tooltip />
-            <XAxis axisLine={false} dataKey='name' tickLine={false} />
+            <Tooltip
+              formatter={(value, name) => [`${value} ${name}`]}
+              labelFormatter={() => ``}
+              contentStyle={{
+                backgroundColor: 'white'
+              }}
+              itemStyle={{ color: 'black' }}
+            />{' '}
+            <XAxis
+              axisLine={false}
+              dataKey='name'
+              tickLine={false}
+              tick={{
+                stroke: '#FF5A5A',
+                fontWeight: '500',
+                opacity: '1.4',
+                fontSize: 10
+              }}
+            />
             <Line
+              name='min'
               type='monotone'
               dataKey='pv'
               stroke='#F9C3C3'
               strokeWidth={2}
+              style={{
+                color: '#FF5A5A',
+                fontWeight: '500',
+                fontSize: '15px',
+                lineHeight: '24px',
+                opacity: '0.5'
+              }}
             />
           </LineChart>
         </ResponsiveContainer>

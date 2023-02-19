@@ -14,6 +14,8 @@ import iconChicken from '../../assets/statsCard/chicken.png';
 import iconEnergy from '../../assets/statsCard/energy.png';
 import emoji from '../../assets/emoji/emoji.png';
 
+import data from '../../data/stat.json';
+
 import '../Home/home.css';
 
 function Home(props) {
@@ -39,11 +41,37 @@ function Home(props) {
                 <CalorieMeasurementCard chart={<PieChartWithPaddingAngle />} />
               </div>
             </div>
+
             <div className='content-container-right'>
-              <StatsCard image={iconEnergy} icon={'icon-energy'} />
+              {data.map((item, index) => (
+                <div key={index}>
+                  <StatsCard
+                    data={item.Calories}
+                    image={iconEnergy}
+                    icon={'icon-energy'}
+                  />
+                  <StatsCard
+                    data={item.Proteines}
+                    image={iconChicken}
+                    icon={'icon-chicken'}
+                  />
+                  <StatsCard
+                    data={item.Glucides}
+                    image={iconApple}
+                    icon={'icon-apple'}
+                  />
+                  <StatsCard
+                    data={item.Lipides}
+                    image={iconCheeseburger}
+                    icon={'icon-cheesburger'}
+                  />
+                </div>
+              ))}
+
+              {/* <StatsCard image={iconEnergy} icon={'icon-energy'} />
               <StatsCard image={iconChicken} icon={'icon-chicken'} />
               <StatsCard image={iconApple} icon={'icon-apple'} />
-              <StatsCard image={iconCheeseburger} icon={'icon-cheesburger'} />
+              <StatsCard image={iconCheeseburger} icon={'icon-cheesburger'} /> */}
             </div>
           </div>
         </div>

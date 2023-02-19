@@ -3,6 +3,7 @@ import {
   BarChart,
   Bar,
   LabelList,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,63 +15,53 @@ import {
 const data = [
   {
     name: '1',
-    calories_brulees: 3000,
-    poids: 2400,
-    amt: 70
+    calories_brulees: 49,
+    poids: 69
   },
   {
     name: '2',
-    calories_brulees: 3000,
-    poids: 1398,
-    amt: 2210
+    calories_brulees: 49,
+    poids: 70
   },
   {
     name: '3',
-    calories_brulees: 2000,
-    poids: 9800,
-    amt: 2290
+    calories_brulees: 49,
+    poids: 71
   },
   {
     name: '4',
-    calories_brulees: 2780,
-    poids: 3908,
-    amt: 2000
+    calories_brulees: 49,
+    poids: 70
   },
   {
     name: '5',
-    calories_brulees: 1890,
-    poids: 4800,
-    amt: 2181
+    calories_brulees: 49,
+    poids: 70
   },
   {
     name: '6',
-    calories_brulees: 2390,
-    poids: 3800,
-    amt: 2500
+    calories_brulees: 49,
+    poids: 71
   },
   {
     name: '7',
-    calories_brulees: 3490,
-    poids: 4300,
-    amt: 2100
+    calories_brulees: 49,
+    poids: 69
   },
   {
     name: '8',
-    calories_brulees: 3490,
-    poids: 4300,
-    amt: 2100
+    calories_brulees: 49,
+    poids: 70
   },
   {
     name: '9',
-    calories_brulees: 3490,
-    poids: 4300,
-    amt: 2100
+    calories_brulees: 49,
+    poids: 70
   },
   {
     name: '10',
-    calories_brulees: 3490,
-    poids: 4300,
-    amt: 2100
+    calories_brulees: 49,
+    poids: 69
   }
 ];
 
@@ -97,16 +88,47 @@ export default class SimpleBarChart extends PureComponent {
             barCategoryGap={25}
             barGap={8} // espace entre les deux barres
           >
-            <CartesianGrid strokeDasharray='4 1 2' vertical={false} />
-            <XAxis dataKey='name' tickLine={false} />
-            <Tooltip />
+            <CartesianGrid strokeDasharray='4 2' vertical={false} />
+            <XAxis
+              dataKey='name'
+              tickLine={false}
+              padding={{
+                right: -25,
+                left: -25
+              }}
+            />
+            <YAxis
+              dataKey='poids'
+              axisLine={false}
+              tickLine={false}
+              // domain={['dataMin', 'dataMax']}
+              orientation='right'
+            />
+            <Tooltip
+              formatter={(value, name) => [`${value} ${name}`]}
+              labelFormatter={() => ``}
+              contentStyle={{ backgroundColor: '#E60000', border: '#E60000' }}
+              itemStyle={{ color: 'white' }}
+            />
             <Legend
               verticalAlign='top'
+              align='right'
               height={36}
               dataKey='calories_brulees'
+              iconType='circle'
             />
-            <Bar dataKey='poids' fill='#282D30' />
-            <Bar dataKey='calories_brulees' fill='#E60000' />
+            <Bar
+              name='Poids(kg)'
+              dataKey='poids'
+              fill='#282D30'
+              radius={[50, 50, 0, 0]}
+            />
+            <Bar
+              name='Calories brûlées (kCal)'
+              dataKey='calories_brulees'
+              fill='#E60000'
+              radius={[50, 50, 0, 0]}
+            />
           </BarChart>
         </ResponsiveContainer>
       </>
