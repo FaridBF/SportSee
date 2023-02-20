@@ -1,39 +1,14 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: 'L',
-    pv: 5
-  },
-  {
-    name: 'M',
-    pv: 10
-  },
-  {
-    name: 'M',
-    pv: 8
-  },
-  {
-    name: 'J',
-    pv: 12
-  },
-  {
-    name: 'V',
-    pv: 20
-  },
-  {
-    name: 'S',
-    pv: 22
-  },
-  {
-    name: 'D',
-    pv: 43
-  }
-];
-
 export default class TinyLineChart extends PureComponent {
   render() {
+    const { averageSessions } = this.props;
+    // console.log('averageSessions', averageSessions);
+    const items = averageSessions.data.sessions.map((item) => {
+      return item;
+    });
+
     return (
       <>
         <p className='duration-of-sessions'>Durée moyenne des sessions</p>
@@ -41,7 +16,7 @@ export default class TinyLineChart extends PureComponent {
           <LineChart
             width={500}
             height={300}
-            data={data}
+            data={items}
             margin={{ top: 5, right: 15, left: 15, bottom: 5 }}
           >
             <Tooltip
@@ -54,7 +29,7 @@ export default class TinyLineChart extends PureComponent {
             />{' '}
             <XAxis
               axisLine={false}
-              dataKey='name'
+              dataKey='day'
               tickLine={false}
               tick={{
                 stroke: '#FF5A5A',
@@ -66,7 +41,7 @@ export default class TinyLineChart extends PureComponent {
             <Line
               name='min'
               type='monotone'
-              dataKey='pv'
+              dataKey='sessionLength'
               stroke='#F9C3C3'
               strokeWidth={2}
               style={{

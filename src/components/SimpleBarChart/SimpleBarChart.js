@@ -12,61 +12,14 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-const data = [
-  {
-    name: '1',
-    calories_brulees: 49,
-    poids: 69
-  },
-  {
-    name: '2',
-    calories_brulees: 49,
-    poids: 70
-  },
-  {
-    name: '3',
-    calories_brulees: 49,
-    poids: 71
-  },
-  {
-    name: '4',
-    calories_brulees: 49,
-    poids: 70
-  },
-  {
-    name: '5',
-    calories_brulees: 49,
-    poids: 70
-  },
-  {
-    name: '6',
-    calories_brulees: 49,
-    poids: 71
-  },
-  {
-    name: '7',
-    calories_brulees: 49,
-    poids: 69
-  },
-  {
-    name: '8',
-    calories_brulees: 49,
-    poids: 70
-  },
-  {
-    name: '9',
-    calories_brulees: 49,
-    poids: 70
-  },
-  {
-    name: '10',
-    calories_brulees: 49,
-    poids: 69
-  }
-];
-
 export default class SimpleBarChart extends PureComponent {
   render() {
+    const { activity } = this.props;
+    // console.log('activity', activity);
+    const items = activity.data.sessions.map((item) => {
+      return item;
+    });
+
     return (
       <>
         <p className='text-activity'>Activité quotidienne</p>
@@ -78,7 +31,7 @@ export default class SimpleBarChart extends PureComponent {
           <BarChart
             width={10}
             height={300}
-            data={data}
+            data={items}
             margin={{
               top: 5,
               right: 30,
@@ -90,18 +43,19 @@ export default class SimpleBarChart extends PureComponent {
           >
             <CartesianGrid strokeDasharray='4 2' vertical={false} />
             <XAxis
-              dataKey='name'
+              dataKey='day'
               tickLine={false}
+              domain={['dataMin', 'dataMax']}
               padding={{
                 right: -25,
                 left: -25
               }}
             />
             <YAxis
-              dataKey='poids'
+              dataKey='kilogram'
               axisLine={false}
               tickLine={false}
-              // domain={['dataMin', 'dataMax']}
+              domain={[68, 71]}
               orientation='right'
             />
             <Tooltip
@@ -114,18 +68,18 @@ export default class SimpleBarChart extends PureComponent {
               verticalAlign='top'
               align='right'
               height={36}
-              dataKey='calories_brulees'
+              dataKey='calories'
               iconType='circle'
             />
             <Bar
               name='Poids(kg)'
-              dataKey='poids'
+              dataKey='kilogram'
               fill='#282D30'
               radius={[50, 50, 0, 0]}
             />
             <Bar
               name='Calories brûlées (kCal)'
-              dataKey='calories_brulees'
+              dataKey='calories'
               fill='#E60000'
               radius={[50, 50, 0, 0]}
             />

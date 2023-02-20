@@ -4,7 +4,7 @@ import IconCard from '../IconCard/IconCard';
 import './statscard.css';
 
 function StatsCard({ image, icon, data, name }) {
-  console.log('data stats card', data);
+  // console.log('data stats card', data);
   return (
     <div className='statscard'>
       <IconCard image={image} icon={icon} />

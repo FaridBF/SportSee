@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
-import mockUserInfos from '../../mocks/mockUserInfos.json';
 import converToKCal from '../../utils/converToKCal';
 import serviceApi from '../../service';
 
@@ -22,15 +20,33 @@ import iconEnergy from '../../assets/statsCard/energy.png';
 import emoji from '../../assets/emoji/emoji.png';
 
 import '../Home/home.css';
+import '../../styles/loading_spinner.css';
 
 function Home() {
   const [userInfos, setUserInfos] = useState(null);
+  const [activity, setActivity] = useState(null);
+  const [performance, setPerformance] = useState(null);
+  const [averageSessions, setAverageSessions] = useState(null);
+
   const userId = 18;
 
   const fetchData = async () => {
     try {
-      const response = await serviceApi.getUserInformations(userId);
-      setUserInfos(response);
+      const responseUserInformations = await serviceApi.getUserInformations(
+        userId
+      );
+      setUserInfos(responseUserInformations);
+      const responseUserActivityInformations =
+        await serviceApi.getUserActivityInformations(userId);
+      setActivity(responseUserActivityInformations);
+      const responseUserAverageSessions =
+        await serviceApi.getUserAverageSessions(userId);
+      setAverageSessions(responseUserAverageSessions);
+      const responseUserPerformance = await serviceApi.getUserPerformance(
+        userId
+      );
+      // console.log('responseUserPerformance', responseUserPerformance);
+      setPerformance(responseUserPerformance);
     } catch (error) {
       alert('Une erreur est survenue lors du chargement des données.');
     }
@@ -38,8 +54,6 @@ function Home() {
 
   useEffect(() => {
     fetchData();
-    // with mocked data
-    // setUserInfos(mockUserInfos);
   }, []);
 
   return (
@@ -66,14 +80,27 @@ function Home() {
               </p>
               <div className='section-container'>
                 <div className='content-container-left'>
-                  <DailyActivity chart={<SimpleBarChart />} />
-                  <div className='container-caloriemeasurementcard'>
-                    <CalorieMeasurementCard chart={<TinyLineChart />} />
-                    <CalorieMeasurementCard
-                      chart={<SimpleRadarChart data='alo' />}
+                  {activity && (
+                    <DailyActivity
+                      chart={<SimpleBarChart activity={activity} />}
                     />
+                  )}
+                  <div className='container-caloriemeasurementcard'>
+                    {averageSessions && (
+                      <CalorieMeasurementCard
+                        chart={
+                          <TinyLineChart averageSessions={averageSessions} />
+                        }
+                      />
+                    )}
+                    {performance && (
+                      <CalorieMeasurementCard
+                        chart={<SimpleRadarChart performance={performance} />}
+                      />
+                    )}
+
                     <CalorieMeasurementCard
-                      chart={<PieChartWithPaddingAngle />}
+                      chart={<PieChartWithPaddingAngle userInfos={userInfos} />}
                     />
                   </div>
                 </div>
@@ -112,7 +139,9 @@ function Home() {
               </div>
             </>
           ) : (
-            <p>Loading...</p>
+            <div className='animation'>
+              <span className='loader loader_spinner'></span>
+            </div>
           )}
         </div>
       </div>
