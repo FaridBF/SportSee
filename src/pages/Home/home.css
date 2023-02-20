@@ -10,7 +10,7 @@
   width: 100%;
   padding-left: 5%;
   padding-top: 25px;
-  height: 820px;
+  min-height: 780px;
   flex-direction: column;
 }
 .section-container {
@@ -55,6 +55,10 @@ img.emoji {
 
 .name-container-home {
   color: red;
+}
+
+span.name-container-home {
+  margin-left: 10px;
 }
 
 .presentation-container-home {
