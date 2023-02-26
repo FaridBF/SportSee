@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
 
 import {
   BarChart,
@@ -16,19 +15,6 @@ import {
 
 import { converToDate } from '../../services/serviceModelisationData';
 export default class SimpleBarChart extends PureComponent {
-  // static propTypes = {
-  //   activity: PropTypes.shape({
-  //     data: PropTypes.shape({
-  //       sessions: PropTypes.arrayOf(
-  //         PropTypes.shape({
-  //           day: PropTypes.string.isRequired,
-  //           kilogram: PropTypes.number.isRequired,
-  //           calories: PropTypes.number.isRequired
-  //         })
-  //       ).isRequired
-  //     }).isRequired
-  //   }).isRequired
-  // };
   render() {
     const { activity } = this.props;
     console.log('activity', activity);
