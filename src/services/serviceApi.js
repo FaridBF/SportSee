@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-import mockUserInfos from '../src/mocks/mockUserInfos.json';
-import mockActivity from '../src/mocks/mockActivity.json';
-import mockAverageSessions from '../src/mocks/mockAverageSessions.json';
-import mockPerformance from '../src/mocks/mockPerformance.json';
+import mockUserInfos from '../mocks/mockUserInfos.json';
+import mockActivity from '../mocks/mockActivity.json';
+import mockAverageSessions from '../mocks/mockAverageSessions.json';
+import mockPerformance from '../mocks/mockPerformance.json';
 
 const BASE_URL = 'http://localhost:3000/user';
 const isMock = true;

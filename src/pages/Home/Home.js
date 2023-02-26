@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import converToKCal from '../../utils/converToKCal';
-import serviceApi from '../../service';
+import converToKCal from '../../services/serviceModelisationData';
+import serviceApi from '../../services/serviceApi';
 
 import CalorieMeasurementCard from '../../components/CalorieMeasurementCard/CalorieMeasurementCard';
 import DailyActivity from '../../components/DailyActivity/DailyActivity';
