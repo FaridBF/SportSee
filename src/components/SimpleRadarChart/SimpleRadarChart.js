@@ -9,10 +9,14 @@ import {
 
 export default class Example extends PureComponent {
   render() {
-    const { performance } = this.props;
-    // console.log('performance', performance);
-    const items = performance.data.data.map((item) => {
-      return item;
+    const performanceData = this.props.performance.data;
+    console.log('this.props', this.props);
+
+    const items = performanceData.data.map((performanceItem) => {
+      const performanceKind = performanceItem.kind;
+      performanceItem.kind = performanceData.kind[performanceKind];
+      console.log('performanceItem', performanceItem);
+      return performanceItem;
     });
 
     return (

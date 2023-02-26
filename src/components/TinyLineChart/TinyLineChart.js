@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-import { getDayOfWeek } from '../../services/serviceModelisationData';
+import DataModelisationService from '../../services/serviceModelisationData';
 
 export default class TinyLineChart extends PureComponent {
   render() {
     const { averageSessions } = this.props;
-    console.log('averageSessions', averageSessions);
+    // console.log('averageSessions', averageSessions);
     const items = averageSessions.data.sessions.map((item) => {
-      item.day = getDayOfWeek(item.day);
+      item.day = DataModelisationService.getDayOfWeek(item.day);
       return item;
     });
 

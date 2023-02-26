@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import converToKCal from '../../services/serviceModelisationData';
+import DataModelisationService from '../../services/serviceModelisationData';
 import serviceApi from '../../services/serviceApi';
 
 import CalorieMeasurementCard from '../../components/CalorieMeasurementCard/CalorieMeasurementCard';
@@ -109,8 +109,9 @@ function Home() {
                   <div key={userInfos.id}>
                     <StatsCard
                       data={
-                        converToKCal(userInfos.data.keyData.calorieCount) +
-                        'kCal'
+                        DataModelisationService.converToKCal(
+                          userInfos.data.keyData.calorieCount
+                        ) + 'kCal'
                       }
                       image={iconEnergy}
                       icon={'icon-energy'}

@@ -13,13 +13,13 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-import { converToDate } from '../../services/serviceModelisationData';
+import DataModelisationService from '../../services/serviceModelisationData';
 export default class SimpleBarChart extends PureComponent {
   render() {
     const { activity } = this.props;
-    console.log('activity', activity);
+    // console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
-      item.day = converToDate(item.day);
+      item.day = DataModelisationService.converToDate(item.day);
       return item;
     });
 

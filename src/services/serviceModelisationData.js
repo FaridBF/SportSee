@@ -3,7 +3,7 @@
  * @param {*} id
  * @returns
  */
-export default function converToKCal(calorie) {
+export function converToKCal(calorie) {
   const kiloCal = calorie / 1000;
   return kiloCal.toFixed(3);
 }
@@ -42,6 +42,4 @@ export function getDayOfWeek(day) {
   return dayString.charAt(0);
 }
 
-// console.log('getDayOfWeek', getDayOfWeek(1));
-
-// export default { converToKCal };
+export default { converToKCal, getDayOfWeek, converToDate, converToPercent };

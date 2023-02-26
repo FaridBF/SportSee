@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
-import { converToPercent } from '../../services/serviceModelisationData';
+import DataModelisationService from '../../services/serviceModelisationData';
 
 const data = [
   { name: 'Group A', value: 100 },
@@ -16,7 +16,8 @@ export default class Example extends PureComponent {
       <>
         <p className='scoring'>Score</p>
         <p className='scoring'>
-          {converToPercent(userInfos.data.score)} de votre objectif
+          {DataModelisationService.converToPercent(userInfos.data.score)} de
+          votre objectif
         </p>
 
         <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
