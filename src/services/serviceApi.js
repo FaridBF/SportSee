@@ -15,7 +15,7 @@ const isMock = true;
  */
 function getUserInformations(id) {
   if (isMock === true) {
-    console.log('mockUserInfos', mockUserInfos);
+    // console.log('mockUserInfos', mockUserInfos);
     return mockUserInfos;
     /// to do importer ma data ici avec les mocks
   } else {

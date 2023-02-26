@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+// import PropTypes from 'prop-types';
+
 import {
   BarChart,
   Bar,
@@ -12,11 +14,26 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import { converToDate } from '../../services/serviceModelisationData';
 export default class SimpleBarChart extends PureComponent {
+  // static propTypes = {
+  //   activity: PropTypes.shape({
+  //     data: PropTypes.shape({
+  //       sessions: PropTypes.arrayOf(
+  //         PropTypes.shape({
+  //           day: PropTypes.string.isRequired,
+  //           kilogram: PropTypes.number.isRequired,
+  //           calories: PropTypes.number.isRequired
+  //         })
+  //       ).isRequired
+  //     }).isRequired
+  //   }).isRequired
+  // };
   render() {
     const { activity } = this.props;
-    // console.log('activity', activity);
+    console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
+      item.day = converToDate(item.day);
       return item;
     });
 
@@ -43,7 +60,7 @@ export default class SimpleBarChart extends PureComponent {
           >
             <CartesianGrid strokeDasharray='4 2' vertical={false} />
             <XAxis
-              dataKey='day'
+              dataKey={'day'}
               tickLine={false}
               domain={['dataMin', 'dataMax']}
               padding={{

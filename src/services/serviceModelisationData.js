@@ -20,4 +20,13 @@ export function converToPercent(score) {
   return pourcentage + '%';
 }
 
+export function converToDate(date) {
+  // Créer un objet Date à partir de la chaîne de caractères représentant la date
+  const maDate = new Date(date);
+  // Extraire le jour du mois correspondant à cette date
+  const jour = maDate.getDate();
+  // Afficher le jour du mois
+  return jour.toString();
+}
+
 // export default { converToKCal };
