@@ -15,7 +15,6 @@ export default function converToKCal(calorie) {
  */
 export function converToPercent(score) {
   let nombre = score; // Le nombre à convertir en pourcentage
-
   let pourcentage = nombre * 100; // Multiplication par 100 pour convertir en pourcentage
   return pourcentage + '%';
 }
@@ -28,5 +27,21 @@ export function converToDate(date) {
   // Afficher le jour du mois
   return jour.toString();
 }
+
+export function getDayOfWeek(day) {
+  const daysOfWeek = [
+    'Lundi',
+    'Mardi',
+    'Mercredi',
+    'Jeudi',
+    'Vendredi',
+    'Samedi',
+    'Dimanche'
+  ];
+  const dayString = daysOfWeek[day - 1];
+  return dayString.charAt(0);
+}
+
+// console.log('getDayOfWeek', getDayOfWeek(1));
 
 // export default { converToKCal };
