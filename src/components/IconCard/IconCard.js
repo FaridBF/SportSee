@@ -1,5 +1,10 @@
 import './iconcard.css';
 
+/**
+ * IconCard component
+ * @param
+ * @returns
+ */
 function IconCard({ image, icon }) {
   return (
     <div className='icon-container'>

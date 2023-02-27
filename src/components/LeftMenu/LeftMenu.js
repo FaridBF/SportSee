@@ -7,6 +7,11 @@ import iconZen from '../../assets/iconLeftMenu/iconZen.png';
 
 import './leftmenu.css';
 
+/**
+ * LeftMenu component
+ * @param
+ * @returns
+ */
 function LeftMenu() {
   return (
     <section className='leftmenu-section'>

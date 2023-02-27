@@ -9,7 +9,12 @@ import {
 
 import DataModelisationService from '../../services/serviceModelisationData';
 
-export default class Example extends PureComponent {
+/**
+ * SimpleRadarChart component recharts
+ * @param
+ * @returns
+ */
+export default class SimpleRadarChart extends PureComponent {
   render() {
     const performanceData = this.props.performance.data;
 

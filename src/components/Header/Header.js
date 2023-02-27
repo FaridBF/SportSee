@@ -6,8 +6,8 @@ import logoSportSee from '../../assets/logoHeader/logoSportSee.png';
 import './header.css';
 
 /**
- * Composant permettant la création de notre composant Header présent sur l'ensemble des pages du site
- * Menu de navigation permettant une redirection vers la page souhaitée via Link pour le logo et NavLink pour le menu (react-router-dom)
+ * Component allowing the creation of our Header component present on all the pages of the site
+ * Navigation menu allowing redirection to the desired page via Link for the logo and NavLink for the menu (react-router-dom)
  */
 function Header() {
   return (

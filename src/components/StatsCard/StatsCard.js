@@ -3,8 +3,12 @@ import IconCard from '../IconCard/IconCard';
 
 import './statscard.css';
 
+/**
+ * StatsCard component
+ * @param
+ * @returns
+ */
 function StatsCard({ image, icon, data, name }) {
-  // console.log('data stats card', data);
   return (
     <div className='statscard'>
       <IconCard image={image} icon={icon} />

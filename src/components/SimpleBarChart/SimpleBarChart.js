@@ -14,10 +14,16 @@ import {
 } from 'recharts';
 
 import DataModelisationService from '../../services/serviceModelisationData';
+
+/**
+ * SimpleBarChart component recharts
+ * @param
+ * @returns
+ */
 export default class SimpleBarChart extends PureComponent {
   render() {
     const { activity } = this.props;
-    console.log('activity', activity);
+    // console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
       item.day = DataModelisationService.converToDate(item.day);
       return item;

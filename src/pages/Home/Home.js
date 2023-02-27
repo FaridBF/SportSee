@@ -22,20 +22,29 @@ import emoji from '../../assets/emoji/emoji.png';
 import '../Home/home.css';
 import '../../styles/loading_spinner.css';
 
+/**
+ * Home is a component that displays user section on the homepage.
+ ** @return {ReactElement} The JSX markup for the Home component
+ */
 function Home() {
   const [userInfos, setUserInfos] = useState(null);
   const [activity, setActivity] = useState(null);
   const [performance, setPerformance] = useState(null);
   const [averageSessions, setAverageSessions] = useState(null);
 
-  const userId = 18;
+  const userId = 12;
 
+  /**
+   * Here, I call on my services (serviceAPI) to recover the data that corresponds
+   ** @return {Object} Data
+   */
   const fetchData = async () => {
     try {
       const responseUserInformations = await serviceApi.getUserInformations(
         userId
       );
       setUserInfos(responseUserInformations);
+      console.log('responseUserInformations', responseUserInformations);
       const responseUserActivityInformations =
         await serviceApi.getUserActivityInformations(userId);
       setActivity(responseUserActivityInformations);
@@ -45,13 +54,17 @@ function Home() {
       const responseUserPerformance = await serviceApi.getUserPerformance(
         userId
       );
-      // console.log('responseUserPerformance', responseUserPerformance);
       setPerformance(responseUserPerformance);
     } catch (error) {
       alert('Une erreur est survenue lors du chargement des données.');
     }
   };
 
+  /**
+   * Using the useeffect to load fetchData when loading the component
+   * @param
+   * @returns
+   */
   useEffect(() => {
     fetchData();
   }, []);

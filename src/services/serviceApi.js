@@ -1,3 +1,4 @@
+//Api service
 import axios from 'axios';
 
 import mockUserInfos from '../mocks/mockUserInfos.json';
@@ -11,29 +12,30 @@ const isMock = true;
 /**
  * Get user informations
  * @param {*} id user id
- * @returns informations of the user
+ * @returns {Object} data: informations of the user
  */
-function getUserInformations(id) {
+async function getUserInformations(id) {
   if (isMock === true) {
     // console.log('mockUserInfos', mockUserInfos);
     return mockUserInfos;
-    /// to do importer ma data ici avec les mocks
   } else {
-    return axios.get(`${BASE_URL}/${id}`).then((response) => response.data);
+    return await axios
+      .get(`${BASE_URL}/${id}`)
+      .then((response) => response.data);
   }
 }
 
 /**
  * Get user activity information
  * @param {*} id user id
- * @returns user activity information
+ * @returns {Object} data: user activity information
  */
-function getUserActivityInformations(id) {
+async function getUserActivityInformations(id) {
   if (isMock === true) {
     // console.log('mockActivity', mockActivity);
     return mockActivity;
   } else {
-    return axios
+    return await axios
       .get(`${BASE_URL}/${id}/activity`)
       .then((response) => response.data);
   }
@@ -42,14 +44,14 @@ function getUserActivityInformations(id) {
 /**
  * Get user AverageSessions
  * @param {*} id user id
- * @returns user AverageSessions
+ * @returns {Object} data: user AverageSessions
  */
-function getUserAverageSessions(id) {
+async function getUserAverageSessions(id) {
   if (isMock === true) {
     // console.log('mockAverageSessions', mockAverageSessions);
     return mockAverageSessions;
   } else {
-    return axios
+    return await axios
       .get(`${BASE_URL}/${id}/average-sessions`)
       .then((response) => response.data);
   }
@@ -58,14 +60,14 @@ function getUserAverageSessions(id) {
 /**
  * Get user performance
  * @param {*} id user id
- * @returns user performance
+ * @returns {Object} data : user performance
  */
-function getUserPerformance(id) {
+async function getUserPerformance(id) {
   if (isMock === true) {
     // console.log('mockPerformance', mockPerformance);
     return mockPerformance;
   } else {
-    return axios
+    return await axios
       .get(`${BASE_URL}/${id}/performance`)
       .then((response) => response.data);
   }

@@ -1,8 +1,9 @@
 import './page404.css';
 
 /**
- * La page 404 est renvoyée pour chaque route inexistante, ou si une
- * valeur présente dans l’URL ne fait pas partie des données renseignées
+ * Error404 is a component that displays a 404 error message to the user.
+ * It includes a `Link` component to allow the user to return to the homepage.
+ * @return {ReactElement} The JSX markup for the Error404 component
  */
 function Page404() {
   return (

@@ -2,21 +2,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Page404 from './pages/Page404/Page404';
 import Home from './pages/Home/Home';
 
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faCopyright } from '@fortawesome/free-regular-svg-icons';
-// import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import {
-//   faChevronDown,
-//   faChevronRight,
-//   faChevronLeft
-// } from '@fortawesome/free-solid-svg-icons';
-
-// library.add(faCopyright, faStar, faChevronDown, faChevronRight, faChevronLeft);
-
 /**
- * Gestion de nos routes via BrowserRouter (react-router-dom)
- * Il stocke l'emplacement actuel dans la barre d'adresse du navigateur à l'aide d'URL propres puis y navigue
+ * Router is a variable that represents a browser router for the application.
+ * The router is created using the `BrowserRouter` function from the `react-router-dom` library.
+ * The JSX element consists of a root `Route` element with several nested `Route` elements.
+ * Each nested `Route` element defines a different route for the application, with a corresponding path and element to render.
+ * The `App` component is used as the root element for all routes, and the other elements are used to render the various pages of the application.
+ * @type {Router}
  */
+
 function App() {
   return (
     <>

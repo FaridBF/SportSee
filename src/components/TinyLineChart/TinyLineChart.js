@@ -3,6 +3,11 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 import DataModelisationService from '../../services/serviceModelisationData';
 
+/**
+ * TinyLineChart component recharts
+ * @param
+ * @returns
+ */
 export default class TinyLineChart extends PureComponent {
   render() {
     const { averageSessions } = this.props;
@@ -29,7 +34,7 @@ export default class TinyLineChart extends PureComponent {
                 backgroundColor: 'white'
               }}
               itemStyle={{ color: 'black' }}
-            />{' '}
+            />
             <XAxis
               axisLine={false}
               dataKey='day'

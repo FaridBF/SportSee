@@ -15,7 +15,12 @@ const data = [
 ];
 const COLORS = ['white', 'red', 'red', 'white'];
 
-export default class Example extends PureComponent {
+/**
+ * PieChartWithPaddingAngle component recharts
+ * @param
+ * @returns
+ */
+export default class PieChartWithPaddingAngle extends PureComponent {
   render() {
     const { userInfos } = this.props;
 
