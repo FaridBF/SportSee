@@ -42,4 +42,27 @@ export function getDayOfWeek(day) {
   return dayString.charAt(0);
 }
 
-export default { converToKCal, getDayOfWeek, converToDate, converToPercent };
+export function translateEnglishToFrench(text) {
+  const dictionary = {
+    energy: 'Energie',
+    strength: 'Force',
+    intensity: 'Intensité',
+    speed: 'Vitesse',
+    cardio: 'Cardio',
+    endurance: 'Endurance'
+  };
+
+  const translatedWords = text.split(' ').map((word) => {
+    const translatedWord = dictionary[word];
+    return translatedWord ? translatedWord : word;
+  });
+  return translatedWords.join(' ');
+}
+
+export default {
+  converToKCal,
+  getDayOfWeek,
+  converToDate,
+  converToPercent,
+  translateEnglishToFrench
+};

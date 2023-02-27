@@ -17,7 +17,7 @@ import DataModelisationService from '../../services/serviceModelisationData';
 export default class SimpleBarChart extends PureComponent {
   render() {
     const { activity } = this.props;
-    // console.log('activity', activity);
+    console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
       item.day = DataModelisationService.converToDate(item.day);
       return item;
@@ -48,7 +48,8 @@ export default class SimpleBarChart extends PureComponent {
             <XAxis
               dataKey={'day'}
               tickLine={false}
-              domain={['dataMin', 'dataMax']}
+              domain={[68, 71]}
+              // domain={['dataMin', 'dataMax']}
               padding={{
                 right: -25,
                 left: -25

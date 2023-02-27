@@ -7,15 +7,18 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+import DataModelisationService from '../../services/serviceModelisationData';
+
 export default class Example extends PureComponent {
   render() {
     const performanceData = this.props.performance.data;
-    console.log('this.props', this.props);
 
     const items = performanceData.data.map((performanceItem) => {
       const performanceKind = performanceItem.kind;
       performanceItem.kind = performanceData.kind[performanceKind];
-      console.log('performanceItem', performanceItem);
+      const stringObj = new String(performanceData.kind[performanceKind]);
+      performanceItem.kind =
+        DataModelisationService.translateEnglishToFrench(stringObj);
       return performanceItem;
     });
 
