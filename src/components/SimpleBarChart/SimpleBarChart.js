@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useEffect } from 'react';
 
 import {
   BarChart,
@@ -41,14 +41,13 @@ export default class SimpleBarChart extends PureComponent {
               left: 20,
               bottom: 5
             }}
-            barCategoryGap={25}
+            barCategoryGap={40}
             barGap={8} // espace entre les deux barres
           >
             <CartesianGrid strokeDasharray='4 2' vertical={false} />
             <XAxis
               dataKey={'day'}
               tickLine={false}
-              domain={[68, 71]}
               // domain={['dataMin', 'dataMax']}
               padding={{
                 right: -25,

@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import {
+  PieChart,
+  Pie,
+  Sector,
+  Cell,
+  ResponsiveContainer,
+  Label
+} from 'recharts';
 import DataModelisationService from '../../services/serviceModelisationData';
 
 const data = [
@@ -15,11 +22,6 @@ export default class Example extends PureComponent {
     return (
       <>
         <p className='scoring'>Score</p>
-        <p className='scoring'>
-          {DataModelisationService.converToPercent(userInfos.data.score)} de
-          votre objectif
-        </p>
-
         <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
           <Pie
             data={data}
@@ -38,6 +40,23 @@ export default class Example extends PureComponent {
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
               />
+            ))}
+            <Label
+              value={
+                DataModelisationService.converToPercent(userInfos.data.score) +
+                ' de votre objectif'
+              }
+              position='center'
+              className='chart-label'
+            />
+            {data.map((entry, index) => (
+              <Sector
+                key={`sector-${index}`}
+                value={entry.value}
+                fill={COLORS[index % COLORS.length]}
+              >
+                <Label>{entry.name}</Label>
+              </Sector>
             ))}
           </Pie>
         </PieChart>
