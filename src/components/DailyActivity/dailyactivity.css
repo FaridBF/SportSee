@@ -34,3 +34,19 @@ tspan {
   line-height: 24px;
   opacity: 0.5;
 }
+
+div.recharts-wrapper
+  svg.recharts-surface
+  g.recharts-layer.recharts-pie
+  text.recharts-text.recharts-label
+  tspan {
+  font-size: 20px;
+}
+
+div.recharts-wrapper
+  svg.recharts-surface
+  g.recharts-layer.recharts-pie
+  text.recharts-text.chart-label
+  tspan {
+  font-size: 10px;
+}
