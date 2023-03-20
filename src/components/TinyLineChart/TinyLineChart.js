@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Legend
+} from 'recharts';
 
 import DataModelisationService from '../../services/serviceModelisationData';
 
@@ -17,9 +24,12 @@ export default class TinyLineChart extends PureComponent {
       return item;
     });
 
+    const renderLegend = () => {
+      return <p className='duration-of-sessions'>Durée moyenne des sessions</p>;
+    };
+
     return (
       <>
-        <p className='duration-of-sessions'>Durée moyenne des sessions</p>
         <ResponsiveContainer width='100%' height='100%'>
           <LineChart
             width={500}
@@ -60,6 +70,7 @@ export default class TinyLineChart extends PureComponent {
                 opacity: '0.5'
               }}
             />
+            <Legend content={renderLegend} verticalAlign='top' />
           </LineChart>
         </ResponsiveContainer>
       </>

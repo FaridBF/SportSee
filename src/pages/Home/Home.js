@@ -32,7 +32,7 @@ function Home() {
   const [performance, setPerformance] = useState(null);
   const [averageSessions, setAverageSessions] = useState(null);
 
-  const userId = 12;
+  const userId = 18;
 
   /**
    * Here, I call on my services (serviceAPI) to recover the data that corresponds
