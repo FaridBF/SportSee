@@ -1,10 +1,8 @@
-import React, { PureComponent, useEffect } from 'react';
+import React, { PureComponent } from 'react';
 
 import {
   BarChart,
   Bar,
-  LabelList,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -23,7 +21,6 @@ import DataModelisationService from '../../services/serviceModelisationData';
 export default class SimpleBarChart extends PureComponent {
   render() {
     const { activity } = this.props;
-    // console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
       item.day = DataModelisationService.converToDate(item.day);
       return item;
@@ -54,19 +51,12 @@ export default class SimpleBarChart extends PureComponent {
             <XAxis
               dataKey={'day'}
               tickLine={false}
-              // domain={['dataMin', 'dataMax']}
               padding={{
                 right: -25,
                 left: -25
               }}
             />
-            <YAxis
-              dataKey='kilogram'
-              axisLine={false}
-              tickLine={false}
-              domain={[68, 71]}
-              orientation='right'
-            />
+            <YAxis orientation='right' axisLine={false} tickLine={false} />
             <Tooltip
               formatter={(value, name) => [`${value} ${name}`]}
               labelFormatter={() => ``}

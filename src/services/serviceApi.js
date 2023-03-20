@@ -7,7 +7,7 @@ import mockAverageSessions from '../mocks/mockAverageSessions.json';
 import mockPerformance from '../mocks/mockPerformance.json';
 
 const BASE_URL = 'http://localhost:3000/user';
-const isMock = true;
+const isMock = false;
 
 /**
  * Get user informations

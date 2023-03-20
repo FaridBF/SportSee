@@ -9,7 +9,7 @@ import Header from '../../components/Header/Header';
 import LeftMenu from '../../components/LeftMenu/LeftMenu';
 import StatsCard from '../../components/StatsCard/StatsCard';
 import SimpleRadarChart from '../../components/SimpleRadarChart/SimpleRadarChart';
-import PieChartWithPaddingAngle from '../../components/PieChartWithPaddingAngle/PieChartWithPaddingAngle';
+import ScoreRadialBarChart from '../../components/ScoreRadialBarChart/ScoreRadialBarChart';
 import SimpleBarChart from '../../components/SimpleBarChart/SimpleBarChart';
 import TinyLineChart from '../../components/TinyLineChart/TinyLineChart';
 
@@ -113,7 +113,7 @@ function Home() {
                     )}
 
                     <CalorieMeasurementCard
-                      chart={<PieChartWithPaddingAngle userInfos={userInfos} />}
+                      chart={<ScoreRadialBarChart userInfos={userInfos} />}
                     />
                   </div>
                 </div>
