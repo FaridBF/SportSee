@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+
 import {
   PieChart,
   Pie,
@@ -12,10 +13,6 @@ import {
   Legend
 } from 'recharts';
 import DataModelisationService from '../../services/serviceModelisationData';
-
-// const data = [{ value: 100 }, { value: 100 }];
-// const COLORS = ['white', 'red'];
-
 /**
  * PieChartWithPaddingAngle component recharts
  * @param
@@ -37,57 +34,15 @@ export default class PieChartWithPaddingAngle extends PureComponent {
 
     const formatPercent = (value) => `${(value * 100).toFixed(0)}%`;
 
+    // const objectif = <p className='objectif'>de votre objectif</p>;
+
     return (
       <>
-        <p>Score avec RadialBarChart</p>
-        {/* PIIIIEEEEE */}
-        {/* <Text
-          style={{
-            color: 'black',
-            fontWeight: 'bold',
-            paddingLeft: '35px'
-          }}
-        >
+        <p>Score</p>
+        {/* <Text width={250} height={220}>
           Score
         </Text> */}
-        {/* <p>Score</p>
-        <PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
-          <Pie
-            data={data}
-            cx={120}
-            cy={100}
-            startAngle={360}
-            endAngle={0}
-            innerRadius={60}
-            outerRadius={80}
-            fill='#8884d8'
-            paddingAngle={5}
-            dataKey='value'
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-            <Label
-              value={DataModelisationService.converToPercent(
-                userInfos.data.score
-              )}
-              position='center'
-              className='chart-label'
-            />
-            <Label value={'de votre objectif'} position='center' />
-            {data.map((entry, index) => (
-              <Sector
-                key={`sector-${index}`}
-                value={entry.value}
-                fill={COLORS[index % COLORS.length]}
-              ></Sector>
-            ))}
-          </Pie>
-        </PieChart> */}
-        {/* <PieChart width={160} height={160}></PieChart> */}
+
         <PieChart width={250} height={220}>
           <Pie
             data={data}
@@ -98,6 +53,20 @@ export default class PieChartWithPaddingAngle extends PureComponent {
             endAngle={450}
             cy={120}
           >
+            <Label
+              value={DataModelisationService.converToPercent(
+                userInfos.data.score
+              )}
+              position='center'
+              fill='black'
+            />
+            <Label
+              className='chart-label'
+              value={'de votre ojectif'}
+              width={10}
+              fill='black'
+              // position='insideBottom'
+            />
             {data.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
@@ -110,4 +79,22 @@ export default class PieChartWithPaddingAngle extends PureComponent {
       </>
     );
   }
+}
+
+{
+  /* <div className='scoring'>
+          <p>{DataModelisationService.converToPercent(userInfos.data.score)}</p>
+          <span>de votre objectif</span>
+        </div> */
+}
+{
+  /* <p className='scoreLabel'>
+          <span className='scoreValue'>
+            {DataModelisationService.converToPercent(userInfos.data.score)}
+          </span>
+          <br />
+          de votre
+          <br />
+          objectif
+        </p> */
 }
