@@ -35,18 +35,27 @@ tspan {
   opacity: 0.5;
 }
 
-div.recharts-wrapper
-  svg.recharts-surface
-  g.recharts-layer.recharts-pie
-  text.recharts-text.recharts-label
-  tspan {
-  font-size: 20px;
+/*ScoreRadialBarChart*/
+
+h1.titleRadialBarChart {
+  padding-top: 15px;
+  padding-left: 25px;
+  font-size: 18px;
 }
 
-div.recharts-wrapper
-  svg.recharts-surface
-  g.recharts-layer.recharts-pie
-  text.recharts-text.chart-label
-  tspan {
-  font-size: 10px;
+.containerScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.resultScore {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+span.descriptionScore {
+  color: #cacdd3;
+  font-size: 15px;
+  font-weight: 500;
 }
