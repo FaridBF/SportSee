@@ -3,10 +3,10 @@ import './dailyactivity.css';
 
 /**
  * DailyActivity component
- * @param
- * @returns
+ * @param object: chart
  */
 function DailyActivity({ chart }) {
+  console.log('chart', chart);
   return <div className='daily-activity-container'>{chart}</div>;
 }
 

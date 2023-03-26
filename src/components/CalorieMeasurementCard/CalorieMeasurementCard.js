@@ -3,8 +3,7 @@ import './caloriemeasurementcard.css';
 
 /**
  * CalorieMeasurementCard component
- * @param
- * @returns
+ * @param chart: object
  */
 function CalorieMeasurementCard({ chart }) {
   return <div className='calorie-measurement-card'>{chart}</div>;

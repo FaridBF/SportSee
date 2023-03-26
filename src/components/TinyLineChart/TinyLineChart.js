@@ -11,9 +11,10 @@ import {
 import DataModelisationService from '../../services/serviceModelisationData';
 
 /**
- * TinyLineChart component recharts
- * @param
- * @returns
+ * TinyLineChart component
+ * @param data is a Array (sessions) of object
+ * @example 0 : {day:'L', sessionLenght:30}
+ * @returns a component that displays the average duration of a session with a legend "Durée moyenne des sessions"
  */
 export default class TinyLineChart extends PureComponent {
   render() {

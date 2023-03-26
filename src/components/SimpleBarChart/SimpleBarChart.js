@@ -15,12 +15,15 @@ import DataModelisationService from '../../services/serviceModelisationData';
 
 /**
  * SimpleBarChart component recharts
- * @param
- * @returns
+ * @param object which consists of sessions (an array of objects) and userId which is a number
+ * @example sessions: [{day: '1', kilogram: 70, calories: 240}] , userId: 18
+ * @returns a component that displays in the form of a bar(Bar) the evolution of weight (YAxis) and calories (YAxis) day by day (XAxis) with a two Legend ( Calories, Kilogram)
+ * and a description of component (<p>Activité quotidienne</p>) + On hover, the synthetic result (Tooltip)
  */
 export default class SimpleBarChart extends PureComponent {
   render() {
     const { activity } = this.props;
+    // console.log('activity', activity);
     const items = activity.data.sessions.map((item) => {
       item.day = DataModelisationService.converToDate(item.day);
       return item;

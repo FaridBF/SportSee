@@ -9,8 +9,8 @@ import './leftmenu.css';
 
 /**
  * LeftMenu component
- * @param
- * @returns
+ * @param image:string
+ * @returns a different icons in dynamic ways with a description
  */
 function LeftMenu() {
   return (

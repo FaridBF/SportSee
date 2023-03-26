@@ -11,12 +11,14 @@ import DataModelisationService from '../../services/serviceModelisationData';
 
 /**
  * SimpleRadarChart component recharts
- * @param
- * @returns
+ * @param object that includes the data (an array that includes objects), the userID (a number) and Kind that is a string object
+ * @example userID: 18 / data : 1 :{value: 240, kind: 'Energie'} / kind : 4 : "strength"
+ * @returns a component that displays the user's value as a radar for the following criteria: "Cardio, Energie, Endurance, Force, Vitesse,Intensité"
  */
 export default class SimpleRadarChart extends PureComponent {
   render() {
     const performanceData = this.props.performance.data;
+    // console.log('performanceData', performanceData);
 
     const items = performanceData.data.map((performanceItem) => {
       const performanceKind = performanceItem.kind;

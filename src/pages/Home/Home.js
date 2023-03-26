@@ -61,9 +61,8 @@ function Home() {
   };
 
   /**
-   * Using the useeffect to load fetchData when loading the component
-   * @param
-   * @returns
+   * This code is using the useEffect hook to call the fetchData function when the component is mounted.
+   * The empty array passed as the second argument ensures that the effect is only run once, when the component first mounts.
    */
   useEffect(() => {
     fetchData();

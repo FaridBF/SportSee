@@ -2,15 +2,19 @@ import React, { PureComponent } from 'react';
 
 import { RadialBarChart, RadialBar, Legend } from 'recharts';
 import DataModelisationService from '../../services/serviceModelisationData';
+
 /**
  * ScoreRadialBarChart component recharts
- * @param
- * @returns
+ * @param object Data which consists of UserInfos: an object that consists of numbers and string,
+ * score : number, id: number, keyData: an object that consists of numbers
+ * @example data: id: 18, keyData: {calorieCount: 2500,...}, score: 0,3, userInfos: {firstName: 'Cecilia',...}
+ * @returns a component that displays as a circle(RadialBarChart) the percentage goal achievement (renderLegend)
+ * with a title of component.
  */
 export default class ScoreRadialBarChart extends PureComponent {
   render() {
     const { userInfos } = this.props;
-    console.log('userInfos', userInfos);
+    // console.log('userInfos', userInfos);
 
     const data = [
       {
