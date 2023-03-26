@@ -1,6 +1,6 @@
 # SportSee Dashboard
 
-<img src = "../front-end-sportsee//src//assets/illustrationReadMe/sport-see.png" alt = "SportSee Dashboard">
+<img src = "../front-end-sportsee//src//assets/illustrationReadMe/sport-see.png" title = "SportSee Dashboard" alt = "SportSee Dashboard">
 
 ## Installation
 
