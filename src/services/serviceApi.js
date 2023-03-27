@@ -1,4 +1,5 @@
 //Api service
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import mockUserInfos from '../mocks/mockUserInfos.json';
@@ -11,8 +12,8 @@ const isMock = false;
 
 /**
  * Get user informations
- * @param {*} id user id
- * @returns {Object} data: informations of the user
+ * @param {number} id user id
+ * @returns {Promise<Object>} data: informations of the user
  */
 async function getUserInformations(id) {
   if (isMock === true) {
@@ -27,8 +28,8 @@ async function getUserInformations(id) {
 
 /**
  * Get user activity information
- * @param {*} id user id
- * @returns {Object} data: user activity information
+ * @param {number} id user id
+ * @returns {Promise<Object>} data: user activity information
  */
 async function getUserActivityInformations(id) {
   if (isMock === true) {
@@ -43,8 +44,8 @@ async function getUserActivityInformations(id) {
 
 /**
  * Get user AverageSessions
- * @param {*} id user id
- * @returns {Object} data: user AverageSessions
+ * @param {number} id user id
+ * @returns {Promise<Object>} data: user AverageSessions
  */
 async function getUserAverageSessions(id) {
   if (isMock === true) {
@@ -59,8 +60,8 @@ async function getUserAverageSessions(id) {
 
 /**
  * Get user performance
- * @param {*} id user id
- * @returns {Object} data : user performance
+ * @param {number} id user id
+ * @returns {Promise<Object>} data : user performance
  */
 async function getUserPerformance(id) {
   if (isMock === true) {
@@ -72,6 +73,15 @@ async function getUserPerformance(id) {
       .then((response) => response.data);
   }
 }
+
+const Api = {
+  getUserInformations: PropTypes.func.isRequired,
+  getUserActivityInformations: PropTypes.func.isRequired,
+  getUserAverageSessions: PropTypes.func.isRequired,
+  getUserPerformance: PropTypes.func.isRequired
+};
+
+Api.propTypes = Api;
 
 export default {
   getUserInformations,

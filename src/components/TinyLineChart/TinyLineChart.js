@@ -1,4 +1,6 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+
 import {
   LineChart,
   Line,
@@ -13,15 +15,22 @@ import DataModelisationService from '../../services/serviceModelisationData';
 /**
  * TinyLineChart component
  * @param data is a Array (sessions) of object
+ * @param {Object} props.averageSessions - An object containing the sessions data to be displayed.
+ * @param {Object} props.averageSessions.data - An object containing the sessions array.
+ * @param {Array} props.averageSessions.data.sessions - An array containing objects representing the sessions.
+ * @param {string} props.averageSessions.data.sessions.day - The day of the session as a string (ex: 'M', 'T', 'W', 'Th', 'F', 'Sa', 'Su').
+ * @param {number} props.averageSessions.data.sessions.sessionLength - The length of the session in minutes.
  * @example 0 : {day:'L', sessionLenght:30}
- * @returns a component that displays the average duration of a session with a legend "Durée moyenne des sessions"
+ * @returns {React.Component} a component that displays the average duration of a session with a legend "Durée moyenne des sessions"
  */
 export default class TinyLineChart extends PureComponent {
   render() {
     const { averageSessions } = this.props;
-    // console.log('averageSessions', averageSessions);
+    console.log('averageSessions', averageSessions);
     const items = averageSessions.data.sessions.map((item) => {
-      item.day = DataModelisationService.getDayOfWeek(item.day);
+      item.day = DataModelisationService.getDayOfWeek(item.day).toString();
+      console.log('item.day', typeof item.day);
+      console.log('item', item);
       return item;
     });
 
@@ -78,3 +87,17 @@ export default class TinyLineChart extends PureComponent {
     );
   }
 }
+
+TinyLineChart.propTypes = {
+  averageSessions: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          //TODO
+          // day: PropTypes.string.isRequired,
+          sessionLength: PropTypes.number.isRequired
+        })
+      )
+    }).isRequired
+  }).isRequired
+};

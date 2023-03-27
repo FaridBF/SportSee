@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import DataModelisationService from '../../services/serviceModelisationData';
 import serviceApi from '../../services/serviceApi';
@@ -24,7 +25,7 @@ import '../../styles/loading_spinner.css';
 
 /**
  * Home is a component that displays user section on the homepage.
- ** @return {ReactElement} The JSX markup for the Home component
+ ** @return {ReactElement} The JS markup for the Home component
  */
 function Home() {
   const [userInfos, setUserInfos] = useState(null);
@@ -44,7 +45,7 @@ function Home() {
         userId
       );
       setUserInfos(responseUserInformations);
-      console.log('responseUserInformations', responseUserInformations);
+      // console.log('responseUserInformations', responseUserInformations);
       const responseUserActivityInformations =
         await serviceApi.getUserActivityInformations(userId);
       setActivity(responseUserActivityInformations);
@@ -161,5 +162,36 @@ function Home() {
     </section>
   );
 }
+
+CalorieMeasurementCard.propTypes = {
+  chart: PropTypes.node.isRequired
+};
+
+DailyActivity.propTypes = {
+  chart: PropTypes.node.isRequired
+};
+
+ScoreRadialBarChart.propTypes = {
+  userInfos: PropTypes.object.isRequired
+};
+
+SimpleBarChart.propTypes = {
+  activity: PropTypes.object.isRequired
+};
+
+SimpleRadarChart.propTypes = {
+  performance: PropTypes.object.isRequired
+};
+
+StatsCard.propTypes = {
+  data: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+};
+
+TinyLineChart.propTypes = {
+  averageSessions: PropTypes.object.isRequired
+};
 
 export default Home;

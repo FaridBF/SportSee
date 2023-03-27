@@ -3,10 +3,9 @@ import './dailyactivity.css';
 
 /**
  * DailyActivity component
- * @param object: chart
+ * @param {ReactNode} chart - The chart component to be rendered
  */
 function DailyActivity({ chart }) {
-  console.log('chart', chart);
   return <div className='daily-activity-container'>{chart}</div>;
 }
 

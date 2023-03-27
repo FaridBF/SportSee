@@ -1,8 +1,9 @@
 //Data modeling service
+import PropTypes from 'prop-types';
 
 /**
  * Calorie Conversion
- * @param {*} data
+ * @param {number} calorie
  * @returns {number}
  */
 export function converToKCal(calorie) {
@@ -10,9 +11,13 @@ export function converToKCal(calorie) {
   return kiloCal.toFixed(3);
 }
 
+converToKCal.propTypes = {
+  calorie: PropTypes.number.isRequired
+};
+
 /**
  * Percentage conversion
- * @param {*} data
+ * @param {number} score
  * @returns {number}
  */
 export function converToPercent(score) {
@@ -21,9 +26,13 @@ export function converToPercent(score) {
   return pourcentage + '%';
 }
 
+converToPercent.propTypes = {
+  score: PropTypes.number.isRequired
+};
+
 /**
  * Function to retrieve only the day of a date
- * @param {*} data
+ * @param {string} date
  * @returns {string}
  */
 export function converToDate(date) {
@@ -35,9 +44,13 @@ export function converToDate(date) {
   return jour.toString();
 }
 
+converToDate.propTypes = {
+  date: PropTypes.string.isRequired
+};
+
 /**
  * Function to display only the first letter of the retrieved day
- * @param {*} data
+ * @param {number} day
  * @returns {string}
  */
 export function getDayOfWeek(day) {
@@ -54,10 +67,14 @@ export function getDayOfWeek(day) {
   return dayString.charAt(0);
 }
 
+getDayOfWeek.propTypes = {
+  day: PropTypes.number.isRequired
+};
+
 /**
  * Function translate a specific object from English to French
- * @param {*}
- *  @returns {string}
+ * @param {string} text
+ * @returns {string}
  */
 export function translateEnglishToFrench(text) {
   const dictionary = {
@@ -75,6 +92,10 @@ export function translateEnglishToFrench(text) {
   });
   return translatedWords.join(' ');
 }
+
+translateEnglishToFrench.propTypes = {
+  text: PropTypes.string.isRequired
+};
 
 export default {
   converToKCal,

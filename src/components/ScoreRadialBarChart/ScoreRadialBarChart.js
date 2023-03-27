@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import { RadialBarChart, RadialBar, Legend } from 'recharts';
 import DataModelisationService from '../../services/serviceModelisationData';
@@ -7,6 +8,8 @@ import DataModelisationService from '../../services/serviceModelisationData';
  * ScoreRadialBarChart component recharts
  * @param object Data which consists of UserInfos: an object that consists of numbers and string,
  * score : number, id: number, keyData: an object that consists of numbers
+ * @param {number} props.userInfos.data.score - score
+ * @param {Object} props.userInfos.data.todayScore - today's score
  * @example data: id: 18, keyData: {calorieCount: 2500,...}, score: 0,3, userInfos: {firstName: 'Cecilia',...}
  * @returns a component that displays as a circle(RadialBarChart) the percentage goal achievement (renderLegend)
  * with a title of component.
@@ -70,3 +73,13 @@ export default class ScoreRadialBarChart extends PureComponent {
     );
   }
 }
+
+ScoreRadialBarChart.propTypes = {
+  userInfos: PropTypes.shape({
+    data: PropTypes.shape({
+      score: PropTypes.number
+      //TODO
+      // todayScore: PropTypes.number.isRequired
+    }).isRequired
+  }).isRequired
+};

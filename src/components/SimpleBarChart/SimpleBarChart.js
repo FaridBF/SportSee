@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   BarChart,
@@ -15,7 +16,11 @@ import DataModelisationService from '../../services/serviceModelisationData';
 
 /**
  * SimpleBarChart component recharts
- * @param object which consists of sessions (an array of objects) and userId which is a number
+ * @param {Array} props.activity.sessions - Array of sessions, each containing a day, kilogram and calories
+ * @param {string} props.activity.sessions.day - Day of the session in string format ('2022-03-27')
+ * @param {number} props.activity.sessions.kilogram - Weight measured during the session in kg
+ * @param {number} props.activity.sessions.calories - Calories burned during the session in kcal
+ * @param {number} props.activity.userId - User ID associated with the activity data
  * @example sessions: [{day: '1', kilogram: 70, calories: 240}] , userId: 18
  * @returns a component that displays in the form of a bar(Bar) the evolution of weight (YAxis) and calories (YAxis) day by day (XAxis) with a two Legend ( Calories, Kilogram)
  * and a description of component (<p>Activité quotidienne</p>) + On hover, the synthetic result (Tooltip)
@@ -91,3 +96,17 @@ export default class SimpleBarChart extends PureComponent {
     );
   }
 }
+
+SimpleBarChart.propTypes = {
+  activity: PropTypes.shape({
+    data: PropTypes.shape({
+      sessions: PropTypes.arrayOf(
+        PropTypes.shape({
+          day: PropTypes.string.isRequired,
+          kilogram: PropTypes.number.isRequired,
+          calories: PropTypes.number.isRequired
+        })
+      ).isRequired
+    }).isRequired
+  }).isRequired
+};

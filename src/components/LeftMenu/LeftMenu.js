@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import IconCard from '../IconCard/IconCard';
 
 import iconBike from '../../assets/iconLeftMenu/iconBike.png';
@@ -9,7 +11,7 @@ import './leftmenu.css';
 
 /**
  * LeftMenu component
- * @param image:string
+ * @param {string} image - The image path for the icon card
  * @returns a different icons in dynamic ways with a description
  */
 function LeftMenu() {
@@ -25,5 +27,10 @@ function LeftMenu() {
     </section>
   );
 }
+
+LeftMenu.propTypes = {
+  //TODO
+  image: PropTypes.string
+};
 
 export default LeftMenu;
