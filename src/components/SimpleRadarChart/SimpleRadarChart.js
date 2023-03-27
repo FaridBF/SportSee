@@ -24,7 +24,7 @@ import DataModelisationService from '../../services/serviceModelisationData';
 export default class SimpleRadarChart extends PureComponent {
   render() {
     const performanceData = this.props.performance.data;
-    console.log('performanceData', performanceData);
+    // console.log('performanceData', performanceData);
 
     const items = performanceData.data.map((performanceItem) => {
       const performanceKind = performanceItem.kind;

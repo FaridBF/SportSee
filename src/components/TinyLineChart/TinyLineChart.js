@@ -26,11 +26,9 @@ import DataModelisationService from '../../services/serviceModelisationData';
 export default class TinyLineChart extends PureComponent {
   render() {
     const { averageSessions } = this.props;
-    console.log('averageSessions', averageSessions);
+    // console.log('averageSessions', averageSessions);
     const items = averageSessions.data.sessions.map((item) => {
       item.day = DataModelisationService.getDayOfWeek(item.day).toString();
-      console.log('item.day', typeof item.day);
-      console.log('item', item);
       return item;
     });
 
