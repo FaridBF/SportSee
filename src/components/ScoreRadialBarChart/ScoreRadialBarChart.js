@@ -77,9 +77,8 @@ export default class ScoreRadialBarChart extends PureComponent {
 ScoreRadialBarChart.propTypes = {
   userInfos: PropTypes.shape({
     data: PropTypes.shape({
-      score: PropTypes.number
-      //TODO
-      // todayScore: PropTypes.number.isRequired
+      score: PropTypes.number,
+      todayScore: PropTypes.number.isRequired
     }).isRequired
   }).isRequired
 };

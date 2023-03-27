@@ -29,7 +29,6 @@ function LeftMenu() {
 }
 
 LeftMenu.propTypes = {
-  //TODO
   image: PropTypes.string
 };
 

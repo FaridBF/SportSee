@@ -93,8 +93,7 @@ TinyLineChart.propTypes = {
     data: PropTypes.shape({
       sessions: PropTypes.arrayOf(
         PropTypes.shape({
-          //TODO
-          // day: PropTypes.string.isRequired,
+          day: PropTypes.string.isRequired,
           sessionLength: PropTypes.number.isRequired
         })
       )
