@@ -28,12 +28,10 @@ npm install
 - [Axios](https://axios-http.com/fr/docs/intro) is a JavaScript module used for making HTTP requests (GET, POST, PUT, etc.).
 - [Prop-types](https://github.com/facebook/prop-types) are used in React components to validate the types of props (or properties) that the component receives. This ensures that the data passed to the component has the expected types and prevents errors during program execution. PropTypes are therefore a useful tool for improving the reliability and maintainability of React components.
 
-```
-3. Launch the project with the following command:
-```
+4. Launch the project with the following command:
 
 ```
-npm start ( "start": "react-scripts start")
+npm start
 ```
 
 ## Additional tools used to create this project:
